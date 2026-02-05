@@ -8,7 +8,7 @@ import morgan from 'morgan'; // Intergiciel de journalisation (logging) des requ
 import salutationsRouter from './src/routes/salutations.route.js';
 
 dotenv.config();
-const PORT = process.env.port || 3000;
+const NODE_PORT = process.env.NODE_PORT || 3000;
 
 const app = express();
 
@@ -32,6 +32,6 @@ app.get('/api', (req, res) => {
     res.send("<h1>Bienvenue à l'API salutations du formatif formel</h1>");
 });
 
-app.listen(PORT, () => {
-    console.log(`Serveur démarré sur le port ${PORT}`);
+app.listen(NODE_PORT, () => {
+    console.log(`Serveur démarré sur le port ${NODE_PORT}`);
 });

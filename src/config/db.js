@@ -1,3 +1,4 @@
+// Services Web - Examen Formatif Formel
 // Version du module mysql qu'on peut utiliser avec async/await
 import mysql from "mysql2/promise";
 

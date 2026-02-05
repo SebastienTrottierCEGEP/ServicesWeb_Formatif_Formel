@@ -31,7 +31,7 @@ async function getSalutationsPourLangue(code_langue) {
 
 async function ajoutSalutation(code_langue, langue, message) {
     // Ajoute une nouvelle salutation à la liste
-    console.log(`Ajout de la salutation : code_langue=${code_langue}, langue=${langue}, message=${message}`);
+    // console.log(`Ajout de la salutation : code_langue=${code_langue}, langue=${langue}, message=${message}`);
     const requete = `INSERT INTO salutations (code_langue, langue, message) VALUES (?, ?, ?)`;
     const valeurs = [code_langue, langue, message];
     try {

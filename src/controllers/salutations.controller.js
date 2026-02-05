@@ -24,7 +24,6 @@ export const _getSalutationsPourLangue = async (req, res) => {
         return res.status(400).send('"code_de_langue" fourni est invalide');
     }
     try {
-        const salutations = await getSalutationsPourLangue(code_langue);
         const salutationsFiltrees = await getSalutationsPourLangue(code_langue);
         if (salutationsFiltrees.length === 0) {
             return res.status(404).send('Aucune salutation trouvée pour cette langue');
@@ -45,9 +44,9 @@ export const _createSalutation = async (req, res) => {
         return res.status(400).send('Données de salutation incomplètes');
     }
     try {
-        const result = await ajoutSalutation(code_langue, 
-                                            langue,
-                                            message);
+       await ajoutSalutation(code_langue, 
+                            langue,
+                            message);
         res.status(201).send('Salutation créée avec succès');
     } catch (erreur) {
         res.status(500).send('Erreur serveur');

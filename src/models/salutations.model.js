@@ -35,6 +35,7 @@ async function ajoutSalutation(code_langue, langue, message) {
     const requete = `INSERT INTO salutations (code_langue, langue, message) VALUES (?, ?, ?)`;
     const valeurs = [code_langue, langue, message];
     try {
+        // .query ou .execute peuvent être utilisés
         const [resultat] = await pool.execute(requete, valeurs);
         console.log(`Salutation ajoutée avec succès, ID: ${resultat.insertId}`);
     } catch (erreur) {
